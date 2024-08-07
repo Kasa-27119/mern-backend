@@ -3,6 +3,9 @@
 // require dotenv 
 require('dotenv').config()
 
+// require cors
+const cors = require('cors');
+
 // bring express
 const express = require('express');
 
