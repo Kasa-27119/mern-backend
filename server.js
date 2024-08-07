@@ -15,6 +15,9 @@ const app = express();
 // set up port - listen for changes on the port
 const port = 4000;
 
+// allow cors - cross origin support
+app.use(cors());
+
 // import routes
 const workoutRoutes = require('./routes/workouts')
 
