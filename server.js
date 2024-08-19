@@ -23,6 +23,8 @@ app.use(cors());
 
 // import routes
 const workoutRoutes = require('./routes/workouts')
+const userRoutes = require('./routes/user')
+const commentRoutes = require('./routes/comments')
 
 // use json with express
 app.use(express.json())
@@ -35,7 +37,12 @@ app.use((req, res, next) => {
 
 // attach the routes to the app
 app.use('/api/workouts', workoutRoutes) 
+app.use('/api/user', userRoutes)
+app.use('/api/comments', commentRoutes)
 //define base route, attaches to localhost eg. localhost - app, /api/workouts/ - uri, attach routes to them '/'
+
+// serve static files
+app.use('/public/uploads', express.static('public/uploads'))
 
 // bring username and password
 const username = process.env.MONGODB_USERNAME
